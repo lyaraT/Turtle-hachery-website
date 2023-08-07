@@ -92,59 +92,47 @@ document.addEventListener('alpine:init', () => {
        //------- Functions -------
 
        selectTimeSlot(index) {
-
-           // check if the index is already in the array
-           if (this.selectedTimeSlots.includes(index)) {
-
-               // remove the index from the array
-               this.selectedTimeSlots = this.selectedTimeSlots.filter(item => item !== index);
-
-           } else {
-
-               // Todo - you should be able to select time slots in the past !!!
-
-               // get the last element of the array
-               let lastElement = this.selectedTimeSlots[this.selectedTimeSlots.length - 1];
-
-               // add 1 to the last element and check if the value is equals to the index
-               if (!this.selectedTimeSlots.length || index - 1 == lastElement) {
-
-                   // add the index to the array
-                   this.selectedTimeSlots.push(index);
-
-               } else {
-                   alert('You can only select consecutive time slots');
-               }
-           }
-
-           // sort the array
-           this.selectedTimeSlots = this.selectedTimeSlots.sort();
-
-
-           console.log(this.selectedTimeSlots);
-       },
+        // Check if the index is already in the array
+        if (this.selectedTimeSlots.includes(index)) {
+            // Time slot already chosen, show an alert
+            alert('Time slot already chosen.');
+        } else {
+            // Todo - you should be able to select time slots in the past !!!
+            
+            // add the index to the array
+            this.selectedTimeSlots.push(index);
+        }
+        
+        // sort the array
+        this.selectedTimeSlots = this.selectedTimeSlots.sort();
+        
+        console.log(this.selectedTimeSlots);
+    },
+    
+    
+      
 
        calculate(ticketType) {
 
            let total = 0;
 
-           this.selectedTimeSlots.forEach((timeSlotIndex) => {
-
-               // calculate the total
-               total += parseInt(ticketType.count * (this.openTimes[timeSlotIndex].isPeak ? ticketType.peak : ticketType.offPeak));
-           });
-
-           ticketType.total = total;
-       
+           for(const ticketType of ticketTypes){
+            total += ticketType.total;
+           }
+       this.totalPayable=total;
+       return total;
        },
 
        gotoCheckout(){
            // store the data in the local storage
            localStorage.setItem('savedDate', JSON.stringify(this.date));
+           localStorage.setItem('savedDate', JSON.stringify(this.selectedTimeSlot));
            localStorage.setItem('ticketTypes', JSON.stringify(this.ticketTypes));
+           localStorage.setItem('ticketTypes', JSON.stringify(this.totalPayable));
+
 
            // redirect to the checkout page
-           window.location.href = 'checkout.html';
+           window.location.href = 'Turtle-hachery-website\Details.html';
        }
 
    }));
