@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="https://unpkg.com/alpinejs" defer></script>
+   <script src="JavaScript/Tickets.js"></script>
+</head>
+<body>
+   <div x-data="tickets">
+      <nav>
+         <div id="navbar">
+            <div class="coverpageheader"><h1>BUY TICKETS</h1></div>
+            <ul>
+                       <li><a href="..\homepage\index.html">Home</a></li>
+             <li><a href="..\Ticketpage\index.html">Tickets</a></li>  
+            <li><a href="..\Details page\index.html">Details</a></li>
+            <li><a href="..\paymentpage\index.html">Payment</a></li>
+           <li><a href="..\Confirmationpage\index.html">Confirmation</a></li>
+            </ul>
+         </div>
+     </nav>
+
+     <div>
+      <label for="timeslot">Time Slot</label>
+         <div>
+            <button x-on:click="showTimes = !showTimes">
+               <span>Show Times</span>
+               <span>Hide Times</span>
+            </button>
+            <ul>
+               <template x-for="(timeSlot, index) in openTimes" :key="index">
+                     <li></li>
+                        x-bind:style="timeSlot.isPeak ? 'background: red' : 'background: green'"
+                        x-on:click="selectTimeSlot(index)">
+                        <label :for="timeSlot.title" x-text="timeSlot.title" style="cursor: pointer;"></label>
+                     </li>
+               </template>
+            </ul>
+         </div>
+      </div>
+
+      <div>
+         <label for="ticketType">Ticket Type</label>
+         <template x-for="(ticketType, index) in ticketTypes" :key="index">
+             <div>
+                 <label x-bind:for="ticketType.name" x-text="ticketType.name"></label>
+                 <div>
+                     <button type="button"
+                         x-on:click="ticketTypes[index].count = (ticketTypes[index].count - 1 > 0 ? ticketTypes[index].count - 1 : 0); calculate(ticketTypes[index])">-</button>
+                     <input type="number" x-model="ticketTypes[index].count" />
+                     <button
+                         x-on:click="ticketTypes[index].count = ticketTypes[index].count + 1; calculate(ticketTypes[index])">+</button>
+                 </div>
+             </div>
+         </template>
+         <button type="button" x-on:click="gotoCheckout">Goto Checkout</button>
+     </div>
+
+
+   </div>
+   
+</body>
+</html>
