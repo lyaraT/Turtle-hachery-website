@@ -1,5 +1,4 @@
-console.log("Tickets page loaded");
-
+console.log("Tickets Page Loaded!")
 document.addEventListener('alpine:init', () => {
    Alpine.data('tickets', () => ({
        date: null,
@@ -141,6 +140,7 @@ document.addEventListener('alpine:init', () => {
 
        gotoCheckout(){
            // store the data in the local storage
+           localStorage.setItem('savedDate', JSON.stringify(this.date));
            localStorage.setItem('ticketTypes', JSON.stringify(this.ticketTypes));
 
            // redirect to the checkout page
