@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <script src="Turtle-hachery-website\JavaScript\Tickets.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="confirmation.css" />
+    
+</head>
+
+<body>
+
+    <nav>
+        <h3>Buy tickets</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+             <li><a href="Tickets.html">Tickets</a></li>
+             <li><a href="Details.html">Details</a></li>
+             <li><a href="payments.html">Payments</a></li>
+             <li><a href="confirmation.html">Confirmation</a></li>
+             
+        </ul>
+    </nav>
+      </section>
+
+
+      <div class="mainContent">
+  
+  <div class="summary table" x-data="checkout">
+    <h2>Confirmation</h2>
+    <h2>Order Summary</h2>
+    <Table class="table1">
+        <tr>
+            <td>Name</td>
+            <td>
+                <div x-text="SavedName">
+            </td>
+
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><div x-text="SavedDate"></td>
+        </tr>
+        <tr>
+            <td>Selected Times</td>
+            <td>
+                <template x-for="timeIndex in SavedTimeslot">
+                    <div x-text="openTimes[timeIndex].title"></div>
+                </template>
+            </td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td x-text="TotalDuration + ' Hrs' "></td>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td>
+                <div x-text="SavedMobile">
+            </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td x-text="SavedEmail"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td x-text="SavedGender"></td>
+        </tr>
+        <tr class="tablehead1">
+            <td>Tickets</td>
+            <td>Charges</td>
+        </tr>
+        <template x-for="guestIndex in ticketTypes">
+            <tr>   
+                <td><div x-text="guestIndex.name"></div></td>
+                <td><div x-text="'$'+guestIndex.total"></div></td>  
+            </tr>
+        </template>
+        <tr>
+            <td>Total Payable</td>
+            <td x-text="'$'+TotalPayable"></td>
+        </tr>
+    </Table>
+ </div>
+      </div>
+      <footer>
+        <div class="containerFooter">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>About Us</h3>
+                <p>"Dive into the captivating universe <br>of turtles and their remarkable lives."</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Phone: 555-5555-555</li>
+                    <li>Email: info@examle.com</li>
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Follow Us</h3>
+                <ul class="Social-Icons">
+                    <li><a href="#">instagram</a></li>
+                    <li><a href="#">twitter</a></li>
+                    <li><a href="#">telegram</a></li>
+                    <li><a href="#">Facebook</i></a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+     </footer>
+</body>
+</html>

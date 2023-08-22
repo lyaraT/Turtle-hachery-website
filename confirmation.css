@@ -1,0 +1,172 @@
+body {
+   background-image: url(Turtle-hachery-website/src/assets/images/pexels-jess-loiterton-5007436.jpg); 
+   background-size: cover;
+   background-repeat: no-repeat;
+   }
+nav {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: rgba(167, 175, 184, 0.3);
+   height: 30%;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   margin-bottom: 15px;
+}
+
+nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   top: 20%;
+}
+
+nav ul li {
+   margin: 10px;
+}
+
+nav ul li:last-child {
+   margin-right: 0;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: #fff;
+   font-size: 20px;
+}
+
+nav ul li a:hover {
+   text-decoration: none;
+   color: #fff;
+   font-size: 18px;
+   opacity: 50%;
+}
+
+nav h3{
+  text-decoration: none;
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10%;
+}
+@media only screen and (max-width: 600px) {
+   nav {
+       position: relative;
+       height: auto;
+   }
+
+   nav ul {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   nav ul li {
+       margin: 10px 0;
+   }}
+   .mainContent{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 25%;
+   }
+ 
+    
+   .summary {
+      opacity: 0.9; 
+      background-color: #f9f9f9;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      width: 500px;
+      margin-bottom: 15px;  
+
+   }
+   
+   .summary h2 {
+      font-size: 30px;
+      color: #137f8e;
+      text-align: center;
+   }
+   
+   .table1 {
+      width: 100%;
+      border-collapse: collapse;
+   }
+   
+   .table1 tr:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+   }
+   
+   .table1 td {
+      padding: 10px;
+      text-align: left;
+   }
+   
+   .table1 td:first-child {
+      font-weight: bold;
+      color: #333;
+   }
+   
+   .tablehead1 {
+      background-color: #f2f2f2;
+      font-weight: bold;
+   }
+   
+
+    
+    footer{
+      margin-top: 200px;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      opacity: 0.9; 
+      color: grey;
+      padding: 30px 0;
+      font-family: 'montserrat',monospace;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+     
+     .row{
+      display: flex;
+          justify-content: center; 
+          flex-wrap: wrap; 
+     }
+     .col-md-4{
+      flex: 0 0 33.333%;
+      max-width: 33.333%; 
+      text-align: center;
+     }
+     .col-md-4 h3{
+      margin-bottom: 15px;
+      color:black;
+      
+     }
+     ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+     }
+     li{
+      margin-bottom: 10px;
+     }
+     
+     @media(max-width:991px){
+      .col-md-4{
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+     }
+     @media(max-width:767px){
+      .col-md-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+     }
+     
