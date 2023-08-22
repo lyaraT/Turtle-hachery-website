@@ -210,8 +210,6 @@ document.addEventListener('alpine:init', () => {
                 this.guest.fullName &&
                 this.guest.mobile &&
                 this.guest.email &&
-                this.isValidEmail(this.guest.email) &&
-                this.guest.confirmEmail &&
                 this.guest.email === this.guest.confirmEmail &&
                 this.guest.gender
             );
@@ -228,7 +226,7 @@ document.addEventListener('alpine:init', () => {
             }
         },
        goToPayment() {
-          // set the guest data to local storage
+
         localStorage.setItem('guestName', JSON.stringify(this.guest.fullName));
         localStorage.setItem('guestMobile', JSON.stringify(this.guest.mobile));
         localStorage.setItem('guestEmail', JSON.stringify(this.guest.email));
