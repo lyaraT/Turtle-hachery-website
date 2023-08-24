@@ -36,7 +36,6 @@
                 <div>
                     <label for="fullName">Full Name</label>
                     <input type="text" name="fullName" id="fullName" x-model="guest.fullName" required>
-                    <span x-show="!guest.fullName" class="error-message">Full Name is required</span>
                 </div>
                 <div>
                     <label for="mobile">Mobile</label>
@@ -45,12 +44,10 @@
                 <div>
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" x-model="guest.email" required>
-                    <span x-show="!isValidEmail(guest.email)" class="error-message">Invalid Email</span>
                 </div>
                 <div>
                     <label for="confirmEmail">Confirm Email</label>
                     <input type="email" name="confirmEmail" id="confirmEmail" x-model="guest.confirmEmail" required>
-                    <span x-show="!isValidEmail(guest.confirmEmail)" class="error-message">Invalid Email</span>
                 </div>
                 <div>
                     <label for="gender">Gender</label>
