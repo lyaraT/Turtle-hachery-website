@@ -84,20 +84,24 @@ padding: 30px;
 	left: 140px;
 
 }
-#PurchaseButton{
+#PurchaseButton {
 	position: absolute;
-right: 600px;
-padding: 10px;
-border-radius: 5px;
-   background-color:white;
+	right: 600px;
+	padding: 12px 20px;
+	border-radius: 5px;
+	background-color: #5BA9A0 ;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
 }
-#PurchaseButton:hover{
-background-color: #e6e6e6;
-}
-.button{
-	padding: 8px;
 
+#PurchaseButton:hover {
+	background-color:#4E938B;
+	transform: scale(1.05);
 }
+
 
 .content{
 	flex: 1;
@@ -187,3 +191,4 @@ align-content: center;
 	position: absolute;
 	top: 250px;
  left: 680px;}
+ 

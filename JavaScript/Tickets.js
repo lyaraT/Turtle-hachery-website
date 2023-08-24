@@ -6,6 +6,8 @@ document.addEventListener('alpine:init', () => {
         open:false,
         name:'',
         totalPayable:'',
+      
+
         ticketTypes: [
             {
                 name: 'Sri Lankan Adult',
@@ -127,12 +129,11 @@ document.addEventListener('alpine:init', () => {
             }
             return this.totalPayable;
         },
-        
+
+      
 
         gotoCheckout() {
             
-            
-
             localStorage.setItem('SavedDate', JSON.stringify(this.date));
             localStorage.setItem('SavedTimeslot', JSON.stringify(this.selectedTimeSlots));
             localStorage.setItem('SavedPrice', JSON.stringify(this.ticketTypes));
@@ -223,6 +224,7 @@ document.addEventListener('alpine:init', () => {
                 this.hasProceeded = true;
             } else {
                 alert('Please fill out all payment fields.');
+                
             }
         },
        goToPayment() {
@@ -280,7 +282,7 @@ document.addEventListener('alpine:init', () => {
             } else {
                 alert('Please fill out all payment fields.');
             }
-        }
+        },
     }));
 });
 
